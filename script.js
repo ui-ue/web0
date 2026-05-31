@@ -1,46 +1,59 @@
-//hi
-const sections = document.querySelectorAll('.time-block');
-console.log("Found sections:", sections);
-//basic click
-const sections = document.querySelectorAll('.time-block');
 
-sections.forEach((section) => {
-    section.addEventListener('click', () => {
-        console.log("clicked!");
-    });
-    //item creation on click
-});
-function createItem(section) {
+function createItem(section, type) {
     const item = document.createElement('div');
-    item.innerText = '🍃';
-    item.style.position = 'absolute';
-    item.style.top = '10px';
-    item.style.left = '50%'; 
-    section.appendChild(item);
-}
+    item.classList.add('falling-item');
+    
 
-const sections = document.querySelectorAll('.time-block');
-sections.forEach((section) => {
-    section.addEventListener('click', () => {
-        createItem(section);
-    });
-});;
+    item.innerText = type === 'day' ? '🍃' : '⭐';
+    
 
-// randomisation
-
-function createItem(section) {
-    const item = document.createElement('div');
-    item.classList.add('falling-item'); // Connects to CSS animation
-    item.innerText = '🍃';
-
-    // Randomize position and speed
     item.style.left = Math.random() * 100 + '%';
+    
+
     const duration = Math.random() * 3 + 3;
     item.style.animationDuration = duration + 's';
+    
 
     section.appendChild(item);
 
-    // Memory cleanup: remove item after it falls
-    setTimeout(() => { item.remove(); }, duration * 1000);
+    setTimeout(() => {
+        item.remove();
+    }, duration * 1000);
 }
-// (Keep the rest of the loop from Step 3)
+
+
+const sections = document.querySelectorAll('.time-block');
+
+sections.forEach((section) => {
+  
+    const isDay = section.classList.contains('day-1') || 
+                  section.classList.contains('day-2') || 
+                  section.classList.contains('day-3');
+                  
+    const themeType = isDay ? 'day' : 'night';
+
+
+    section.addEventListener('click', () => {
+        for (let i = 0; i < 5; i++) {
+            createItem(section, themeType);
+        }
+    });
+
+
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+
+        const rect = section.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isVisible && !scrollTimeout) {
+
+            createItem(section, themeType);
+            
+      
+            scrollTimeout = setTimeout(() => {
+                scrollTimeout = null;
+            }, 150); 
+        }
+    });
+});
