@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barrio&family=Finlandica+Headline:ital,wght@0,100..900;1,100..900&family=Londrina+Shadow&family=Playwrite+GB+S+Guides:ital@0;1&display=swap');
 
+body {
+    font-family: "Londrina Shadow", sans-serif;
 
 .time-block {
     height: 100vh;             
@@ -23,7 +25,7 @@
 
 
 .day-1 {
-    background-image: url("");
+    background-image: url("https://pbs.twimg.com/media/EDFK2CJXoAEI5Aj.jpg");
 }
 .night-1 {
     background-image: url("");
