@@ -74,6 +74,12 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+footer {
+	background-color: blue;
+	padding: 10px;
+	color: white;
+}
 /* #section-5{
 	display: flex;
 	justify-content: center;
@@ -83,6 +89,20 @@ body {
 	width: 45%
 		height: auto;
 } */
+
+footer {
+/* 	background-color: purple;
+	padding: 10px;
+	color: white; */
+			background: linear-gradient(90deg, #885A89 0%, #87A1EB 100%);
+		padding: 20px;
+	color: white
+}
+
+footer p {
+    font-size: 3rem; 
+}
+
 
 
 
