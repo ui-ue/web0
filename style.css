@@ -1,13 +1,102 @@
-
-/* Your fonts here */
-
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-/* */
+
+.time-block {
+    height: 100vh;             
+	
+    display: flex;             
+    justify-content: left;
+    align-items: left;
+
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+
+.time-block h2 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+
+
+.day-1 {
+    background-image: url("");
+}
+.night-1 {
+    background-image: url("");
+}
+
+
+.day-2 {
+    background-image: url("");
+}
+.night-2 {
+    background-image: url("");
+}
+
+/* Day 3 & Night 3 */
+.day-3 {
+    background-image: url("");
+}
+.night-3 {
+    background-image: url("");
+}
+
+
+.falling-item {
+    position: absolute;
+    top: -50px;
+    pointer-events: none; 
+    font-size: 24px;
+    z-index: 10;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+.time-block {
+    position: relative;
+    overflow: hidden;
+}
+/* #section-5{
+	display: flex;
+	justify-content: center;
+	gap: 20px
+}
+#section-5 img{
+	width: 45%
+		height: auto;
+} */
+
+
+
+
+
+
+
+
+/* 
 
 h1 {
 	font-family: 'Pacifico', cursive;
 	text-shadow: 1px 1px 2px black;
+}
+body {
+	text-align: center;
 }
 p {
 	font-family: 'Pacifico', cursive;
@@ -39,12 +128,12 @@ img {
 background-position: center;
 background-size: cover;
 background-attachment: fixed; /*cool parralax*/
-}
+/* }
 
 #section-4 {
 	padding: 20px;
 }
-/* Your CSS here */
+
 
 
 nav {
@@ -128,7 +217,7 @@ header img {
 }
 #right-column {background-color:orange;}
 
-/* #section-5{
+#section-5{
 	display: flex;
 	justify-content: center;
 	gap: 20px
@@ -136,9 +225,9 @@ header img {
 #section-5 img{
 	width: 45%
 		height: auto;
-} */
+} 
 
-}
+*/ 
 
 
 
